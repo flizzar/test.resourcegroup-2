@@ -18,9 +18,9 @@ terraform {
 data "terraform_remote_state" "state" {
     backend = "azurerm"
     config = {
-        resource_group_name = "${var.backendrg}"
-        storage_account_name = "${var.backendSA}"
-        container_name = "${var.backendblob}"
-        key = "${var.backendkey}"
+        resource_group_name = "terraform"
+        storage_account_name = "flizztffile"
+        container_name = "tfstate"
+        key = "terraform-test2.tfstate"
     }
 }
