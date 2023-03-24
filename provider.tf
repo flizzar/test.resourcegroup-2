@@ -12,15 +12,9 @@ terraform {
     }
   }
   backend "azurerm" {
+    resource_group_name = "terraform"
+    storage_account_name = "flizztffile"
+    container_name = "tfstate"
+    key = "terraform-test2.tfstate"
   }
-}
-
-data "terraform_remote_state" "state" {
-    backend = "azurerm"
-    config = {
-        resource_group_name = "terraform"
-        storage_account_name = "flizztffile"
-        container_name = "tfstate"
-        key = "terraform-test2.tfstate"
-    }
 }
