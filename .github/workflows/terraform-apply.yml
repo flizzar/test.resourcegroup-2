@@ -80,11 +80,11 @@ jobs:
       uses: Azure/login@v1.4.6
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        client-id: ${{ secret.AZ_CLIENT_ID }}
+        client-id: ${{ secrets.AZ_CLIENT_ID }}
         # TenantId of the Azure Service principal created.
-        tenant-id: ${{ secret.AZ_TENANT_ID }}
+        tenant-id: ${{ secrets.AZ_TENANT_ID }}
         # Azure subscriptionId
-        subscription-id: ${{ secret.AZ_SUBSCRIPTION_ID }}
+        subscription-id: ${{ secrets.AZ_SUBSCRIPTION_ID }}
         # Set this value to true to enable Azure PowerShell Login in addition to Az CLI login
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
