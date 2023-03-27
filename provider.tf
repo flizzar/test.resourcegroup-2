@@ -1,6 +1,5 @@
 provider "azurerm" {
   version         = "2.99"
-  subscription_id = "c6c596fb-400d-460d-9a51-ebce5f6833c2"
   features {}
 }
 
