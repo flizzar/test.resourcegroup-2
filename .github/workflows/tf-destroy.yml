@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "Destroy" ]
   pull_request:
-
+    branches: [ "Destroy" ]
 permissions:
   contents: read
   id-token: write
@@ -47,9 +47,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: github.ref == 'refs/heads/"Destroy"'
       run: terraform plan -input=false
       
     - name: Terraform Destroy
-      if: github.ref == 'refs/heads/"Destroy"'
+     # if: github.ref == 'refs/heads/"Destroy"'
       run: terraform destroy
