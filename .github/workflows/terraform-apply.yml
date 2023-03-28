@@ -17,6 +17,10 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+      BACKEND_RG: ${{ backend_resource_group_name }}
+      BACKEND_STORAGE_ACCOUNT: ${{ backend_storage_account_name }}
+      BACKEND_CONTAINER: ${{ backend_container_name }}
+      BACKEND_KEY: ${{ backend_key }}
     runs-on: ubuntu-latest
     environment: production
 
@@ -52,5 +56,5 @@ jobs:
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-      # if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      # if: github.ref == 'refs/heads/"main"'
       run: terraform apply -auto-approve -input=false
