@@ -2,7 +2,7 @@ name: 'Terraform'
 
 on:
   push:
-    branches: [ "main","Destroy" ]
+    branches: [ "main" ]
   pull_request:
 
 permissions:
@@ -55,7 +55,3 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"'
       run: terraform apply -auto-approve -input=false
-      
-    - name: Terraform Destroy
-      if: github.ref == 'refs/heads/*Destroy*'
-      run: terraform destroy
