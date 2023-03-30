@@ -3,7 +3,8 @@ name: 'Terraform'
 on:
   push:
     branches: [ "Apply" ]
-  pull_request: ["Update*"]
+  pull_request:
+    branches: ["Update*"]
 
 permissions:
   contents: read
