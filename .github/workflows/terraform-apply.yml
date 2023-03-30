@@ -2,7 +2,7 @@ name: 'Terraform'
 
 on:
   push:
-    branches: [ "Apply" ]
+    branches: [ "Apply","SA*" ]
   pull_request:
     branches: [ "Update*","Apply" ]
 
