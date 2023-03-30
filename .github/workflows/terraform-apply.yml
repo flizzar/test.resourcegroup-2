@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "Apply" ]
   pull_request:
-    branches: ["Update*"]
+    branches: [ "Update*" ]
 
 permissions:
   contents: read
