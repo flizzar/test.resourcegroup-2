@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "example" {
   name     = "TC-GithubActions"
   location = "North Europe"
-} 
+}
 
 resource "azurerm_storage_account" "example" {
   name                     = "githubactionsphh2"

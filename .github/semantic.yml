@@ -1,5 +1,5 @@
 titleOnly: true
 
 types:
-  - feat:
-  - fix:
+  - feat
+  - fix
