@@ -2,15 +2,9 @@ name: 'Terraform'
 
 on:
   push:
-<<<<<<< HEAD
   pull_request:
     branches: 
       - 'Apply'
-=======
-    branches: []
-  pull_request:
-    branches: []
->>>>>>> cd339ec17239345f81d47bf4882c4a1cd8b3c527
 
 permissions:
   contents: read
@@ -59,9 +53,5 @@ jobs:
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-<<<<<<< HEAD
       if: github.ref == 'refs/heads/Apply'
-=======
-      # if: github.ref == 'refs/heads/Apply'
->>>>>>> cd339ec17239345f81d47bf4882c4a1cd8b3c527
       run: terraform apply -auto-approve -input=false
