@@ -87,6 +87,5 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    steps:
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
