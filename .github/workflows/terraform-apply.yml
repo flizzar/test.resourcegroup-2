@@ -12,7 +12,8 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    if: github.ref != 'refs/heads/Apply'
+    name: 'Plan'
     env:
       ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
@@ -47,7 +48,6 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: github.ref != 'refs/heads/Apply'
       run: terraform plan -input=false
       
       # On push to "main", build or change infrastructure according to Terraform configuration files
@@ -87,6 +87,5 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    steps:
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
